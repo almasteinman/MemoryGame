@@ -2,9 +2,11 @@ package com.example.memorygame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -138,18 +140,24 @@ public class MainActivity extends AppCompatActivity {
            //   בודקים אם יש מאחוריהם את אותה תמונה
            //   אם לא אז הופכים את הקלפים בחזרה
            //אם כן אז הם נשארים פתוחים ומעלים לשחקן את מספר הזוגות שהוא מצא
-
+           Log.e("XXXXX", "turnEnd count = " + count);
            if(count == 1) {
+               Log.e("XXXXX", "count = " + count);
                card1 = view.getId();
                return;
            }
            if(count == 2) {
                //לקבל תמונה משני הכרטיסים ולהשוות
+               Log.e("XXXXX", "count = " + count);
                 ImageView imageViewCard1 = findViewById(card1);
-                if (imageViewCard1.getDrawable() == ((ImageView) view).getDrawable() )
+                Drawable image1 = imageViewCard1.getDrawable();
+                Drawable image2 = ((ImageView) view).getDrawable();
+                if (image1.getConstantState().equals(image2.getConstantState()))
                 {
                     counterPlayer1++;
+                    Log.e("XXXXX", "counterPlayer1 = " + counterPlayer1);
                 }
+
                 count=0;
            }
 
