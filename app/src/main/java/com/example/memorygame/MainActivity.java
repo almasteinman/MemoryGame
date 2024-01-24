@@ -1,4 +1,5 @@
 package com.example.memorygame;
+import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -141,12 +142,6 @@ public class MainActivity extends AppCompatActivity {
 
 
        public void turnEnd(View view) throws InterruptedException {
-        //כמה קלפים פתוחים
-           //אם פתוח קךף 1 לא קורה כלום
-           // אם פתוחים 2 קלפים
-           //   בודקים אם יש מאחוריהם את אותה תמונה
-           //   אם לא אז הופכים את הקלפים בחזרה
-           //אם כן אז הם נשארים פתוחים ומעלים לשחקן את מספר הזוגות שהוא מצא
            Log.e("XXXXX", "turnEnd count = " + count);
            if(count == 1) {
                Log.e("XXXXX", "count = " + count);
@@ -166,12 +161,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    closeCard(card1,((ImageView) view));
-                }
+                    final Handler handler = new Handler();
+                    handler.postDelayed(() -> closeCard(card1,((ImageView) view)), 400);
 
+                }
                 count=0;
+
            }
 
        }
-
 }
