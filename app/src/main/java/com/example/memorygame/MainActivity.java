@@ -166,16 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Runnable r = new Runnable() {
-                        @Override
-                        public void run(){
-                            Log.e("XXXXX", "close card = ");
-                            closeCard(card1,(ImageView) view);
-                        }
-                    };
-
-                    Handler h = new Handler();
-                    h.postDelayed(r, 5000);
+                    closeCard(card1,((ImageView) view));
                 }
 
                 count=0;
@@ -183,8 +174,4 @@ public class MainActivity extends AppCompatActivity {
 
        }
 
-    private class Handler {
-        public void postDelayed(Runnable r, int i) {
-        }
-    }
 }
