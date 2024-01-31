@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -143,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
        public void turnEnd1(View view) throws InterruptedException {
            if(count == 1) {
                Log.e("XXXXX", "count = " + count);
@@ -158,12 +161,18 @@ public class MainActivity extends AppCompatActivity {
                 {
                     if(turn.equals("counterPlayer1")) {
                         counterPlayer1++;
+                        String p1 = String.valueOf(counterPlayer1);
+                        TextView tv1 = findViewById(R.id.textView1);
+                        tv1.setText(p1.toString());
                         Log.e("XXXXX", "counterPlayer1 = " + counterPlayer1);
                         turn= "counterPlayer2";
                         Log.e("XXXXX", "counterPlayer2 turn:");
                     }
                     else {
                        counterPlayer2++;
+                        String p2 = String.valueOf(counterPlayer2);
+                        TextView tv2 = findViewById(R.id.textView2);
+                        tv2.setText(p2.toString());
                         Log.e("XXXXX", "counterPlayer2 = " + counterPlayer2);
                        turn="counterPlayer1";
                         Log.e("XXXXX", "counterPlayer1 turn:");
@@ -184,11 +193,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 count=0;
-
-                
-
-
-
            }
 
        }
