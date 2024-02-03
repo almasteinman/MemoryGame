@@ -22,11 +22,11 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <ImageView
-        android:id="@+id/imageview_card11"
+        android:id="@+id/imageview_card1"
         android:layout_width="75dp"
         android:layout_height="76dp"
         android:contentDescription="TODO"
-        android:onClick="openCard1"
+        android:onClick="openCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
@@ -37,161 +37,161 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck,DuplicateSpeakableTextCheck" />
 
     <ImageView
+        android:id="@+id/imageview_card2"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card3"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card4"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.262"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card5"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card6"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card7"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card8"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card9"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.589"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card10"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.589"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageview_card11"
+        android:layout_width="82dp"
+        android:layout_height="76dp"
+        android:contentDescription="TODO"
+        android:onClick="openCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.589"
+        app:srcCompat="@drawable/blue_card"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <ImageView
         android:id="@+id/imageview_card12"
         android:layout_width="82dp"
         android:layout_height="76dp"
         android:contentDescription="TODO"
-        android:onClick="openCard15"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card13"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card14"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard11"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card21"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard14"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card22"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard6"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card23"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card24"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card31"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card32"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard13"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card33"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard12"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.589"
-        app:srcCompat="@drawable/blue_card"
-        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageview_card34"
-        android:layout_width="82dp"
-        android:layout_height="76dp"
-        android:contentDescription="TODO"
-        android:onClick="openCard2"
+        android:onClick="openCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
@@ -202,11 +202,11 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageview_card41"
+        android:id="@+id/imageview_card13"
         android:layout_width="82dp"
         android:layout_height="76dp"
         android:contentDescription="TODO"
-        android:onClick="openCard10"
+        android:onClick="openCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
@@ -217,11 +217,11 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageview_card42"
+        android:id="@+id/imageview_card14"
         android:layout_width="82dp"
         android:layout_height="76dp"
         android:contentDescription="TODO"
-        android:onClick="openCard3"
+        android:onClick="openCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.343"
@@ -232,11 +232,11 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageview_card43"
+        android:id="@+id/imageview_card15"
         android:layout_width="82dp"
         android:layout_height="76dp"
         android:contentDescription="TODO"
-        android:onClick="openCard8"
+        android:onClick="openCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.641"
@@ -247,11 +247,11 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageview_card44"
+        android:id="@+id/imageview_card16"
         android:layout_width="82dp"
         android:layout_height="76dp"
         android:contentDescription="TODO"
-        android:onClick="openCard16"
+        android:onClick="openCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"

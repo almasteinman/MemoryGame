@@ -1,4 +1,5 @@
 package com.example.memorygame;
+
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,130 +11,69 @@ import android.widget.ImageView;
 import android.util.Log;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    int count=0;
+    int count = 0;
     int card1;
-    int counterPlayer1=0;
-    int counterPlayer2=0;
-    String turn= "counterPlayer1";
+    int counterPlayer1 = 0;
+    int counterPlayer2 = 0;
+    String turn = "counterPlayer1";
+    ImageView[] imageViewsArray = new ImageView[16];
+    Integer[] drawablesArray = new Integer[16];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fillImageViewsArray();
+        fillDrawablesArray();
+        shuffleDrawablesArray();
     }
 
-    public void openCard1(View view) throws InterruptedException {
-        ImageView cardImageView1 = findViewById(R.id.imageview_card11);
-        cardImageView1.setImageResource(R.drawable.card1);
-        count++;
-        turnEnd1(view);
-
-    }
-    public void openCard2(View view) throws InterruptedException {
-        ImageView cardImageView2 = findViewById(R.id.imageview_card34);
-        cardImageView2.setImageResource(R.drawable.card1);
-        count++;
-        turnEnd1(view);
+    // First array - Image views
+    private void fillImageViewsArray() {
+        for (int i = 0; i < 16; i++) {
+            int imageViewId = getResources().getIdentifier("imageview_card" + (i + 1), "id", getPackageName());
+            imageViewsArray[i] = findViewById(imageViewId);
+        }
     }
 
-    public void openCard3(View view) throws InterruptedException {
-        ImageView cardImageView3 = findViewById(R.id.imageview_card42);
-        cardImageView3.setImageResource(R.drawable.card2);
-        count++;
-        turnEnd1(view);
+    // Second array - Drawables (Images) identifiers
+    private void fillDrawablesArray() {
+        for (int i = 0; i < 16; i++) {
+            // Fill in the drawable's identifier
+            int drawableId = getResources().getIdentifier("card" + ((i % 8) + 1), "drawable", getPackageName());
+            drawablesArray[i] = drawableId;
+        }
     }
 
-    public void openCard4(View view) throws InterruptedException {
-        ImageView cardImageView4 = findViewById(R.id.imageview_card31);
-        cardImageView4.setImageResource(R.drawable.card2);
-        count++;
-        turnEnd1(view);
+    // Second array - Shuffle the array
+    private void shuffleDrawablesArray() {
+        List<Integer> drawablesList = Arrays.asList(drawablesArray); // Convert array to list
+        Collections.shuffle(drawablesList); // Shuffle list
+        drawablesList.toArray(drawablesArray); // Convert list to array
     }
 
-    public void openCard5(View view) throws InterruptedException {
-        ImageView cardImageView5 = findViewById(R.id.imageview_card13);
-        cardImageView5.setImageResource(R.drawable.card3);
-        count++;
-        turnEnd1(view);
-    }
+    public void openCard(View view) throws InterruptedException {
+        ImageView imageView = (ImageView) view;
 
-    public void openCard6(View view) throws InterruptedException {
-        ImageView cardImageView6 = findViewById(R.id.imageview_card22);
-        cardImageView6.setImageResource(R.drawable.card3);
-        count++;
-        turnEnd1(view);
-    }
+        int id_of_imageview_in_array = 0;
 
-    public void openCard7(View view) throws InterruptedException {
-        ImageView cardImageView7 = findViewById(R.id.imageview_card24);
-        cardImageView7.setImageResource(R.drawable.card4);
-        count++;
-        turnEnd1(view);
-    }
+        for (int i = 0; i < 16; i++) {
+            if (imageViewsArray[i] == imageView) {
+                id_of_imageview_in_array = i;
+                break;
+            }
+        }
 
-    public void openCard8(View view) throws InterruptedException {
-        ImageView cardImageView8 = findViewById(R.id.imageview_card43);
-        cardImageView8.setImageResource(R.drawable.card4);
+        imageView.setImageResource(drawablesArray[id_of_imageview_in_array]);
         count++;
-        turnEnd1(view);
-    }
-
-    public void openCard9(View view) throws InterruptedException {
-        ImageView cardImageView9 = findViewById(R.id.imageview_card23);
-        cardImageView9.setImageResource(R.drawable.card5);
-        count++;
-        turnEnd1(view);
-    }
-
-    public void openCard10(View view) throws InterruptedException {
-        ImageView cardImageView10 = findViewById(R.id.imageview_card41);
-        cardImageView10.setImageResource(R.drawable.card5);
-        count++;
-        turnEnd1(view);
-    }
-
-    public void openCard11(View view) throws InterruptedException {
-        ImageView cardImageView11 = findViewById(R.id.imageview_card14);
-        cardImageView11.setImageResource(R.drawable.card6);
-        count++;
-        turnEnd1(view);
-    }
-
-    public void openCard12(View view) throws InterruptedException {
-        ImageView cardImageView12 = findViewById(R.id.imageview_card33);
-        cardImageView12.setImageResource(R.drawable.card6);
-        count++;
-        turnEnd1(view);
-    }
-
-    public void openCard13(View view) throws InterruptedException {
-        ImageView cardImageView13 = findViewById(R.id.imageview_card32);
-        cardImageView13.setImageResource(R.drawable.card7);
-        count++;
-        turnEnd1(view);
-    }
-
-    public void openCard14(View view) throws InterruptedException {
-        ImageView cardImageView14 = findViewById(R.id.imageview_card21);
-        cardImageView14.setImageResource(R.drawable.card7);
-        count++;
-        turnEnd1(view);
-    }
-
-    public void openCard15(View view) throws InterruptedException {
-        ImageView cardImageView15 = findViewById(R.id.imageview_card12);
-        cardImageView15.setImageResource(R.drawable.card8);
-        count++;
-        turnEnd1(view);
-    }
-
-    public void openCard16(View view) throws InterruptedException {
-        ImageView cardImageView16 = findViewById(R.id.imageview_card44);
-        cardImageView16.setImageResource(R.drawable.card8);
-        count++;
-        turnEnd1(view);
+        turnEnd1(imageView);
     }
 
     public void closeCard(int card1, ImageView view) {
@@ -143,57 +83,49 @@ public class MainActivity extends AppCompatActivity {
         card2Closed.setImageResource(R.drawable.blue_card);
     }
 
-
-
-
-       public void turnEnd1(View view) throws InterruptedException {
-           if(count == 1) {
-               Log.e("XXXXX", "count = " + count);
-               card1 = view.getId();
-               return;
-           }
-           if(count == 2) {
-               Log.e("XXXXX", "count = " + count);
-                ImageView imageViewCard1 = findViewById(card1);
-                Drawable image1 = imageViewCard1.getDrawable();
-                Drawable image2 = ((ImageView) view).getDrawable();
-                if (image1.getConstantState().equals(image2.getConstantState()))
-                {
-                    if(turn.equals("counterPlayer1")) {
-                        counterPlayer1++;
-                        String p1 = String.valueOf(counterPlayer1);
-                        TextView tv1 = findViewById(R.id.textView1);
-                        tv1.setText(p1.toString());
-                        Log.e("XXXXX", "counterPlayer1 = " + counterPlayer1);
-                        turn= "counterPlayer2";
-                        Log.e("XXXXX", "counterPlayer2 turn:");
-                    }
-                    else {
-                       counterPlayer2++;
-                        String p2 = String.valueOf(counterPlayer2);
-                        TextView tv2 = findViewById(R.id.textView2);
-                        tv2.setText(p2.toString());
-                        Log.e("XXXXX", "counterPlayer2 = " + counterPlayer2);
-                       turn="counterPlayer1";
-                        Log.e("XXXXX", "counterPlayer1 turn:");
-                    }
+    public void turnEnd1(ImageView imageView) throws InterruptedException {
+        if (count == 1) {
+            Log.e("XXXXX", "count = " + count);
+            card1 = imageView.getId();
+            return;
+        }
+        if (count == 2) {
+            Log.e("XXXXX", "count = " + count);
+            ImageView imageViewCard1 = findViewById(card1);
+            Drawable image1 = imageViewCard1.getDrawable();
+            Drawable image2 = imageView.getDrawable();
+            if (image1.getConstantState().equals(image2.getConstantState())) {
+                if (turn.equals("counterPlayer1")) {
+                    counterPlayer1++;
+                    String p1 = String.valueOf(counterPlayer1);
+                    TextView tv1 = findViewById(R.id.textView1);
+                    tv1.setText(p1.toString());
+                    Log.e("XXXXX", "counterPlayer1 = " + counterPlayer1);
+                    turn = "counterPlayer2";
+                    Log.e("XXXXX", "counterPlayer2 turn:");
+                } else {
+                    counterPlayer2++;
+                    String p2 = String.valueOf(counterPlayer2);
+                    TextView tv2 = findViewById(R.id.textView2);
+                    tv2.setText(p2.toString());
+                    Log.e("XXXXX", "counterPlayer2 = " + counterPlayer2);
+                    turn = "counterPlayer1";
+                    Log.e("XXXXX", "counterPlayer1 turn:");
                 }
-                else
-                {
-                    final Handler handler = new Handler();
-                    handler.postDelayed(() -> closeCard(card1,((ImageView) view)), 400);
-                    if(turn.equals("counterPlayer1")) {
-                        turn = "counterPlayer2";
-                        Log.e("XXXXX", "counterPlayer2 turn:");
-                    }
-                    else {
-                        turn = "counterPlayer1";
-                        Log.e("XXXXX", "counterPlayer1 turn:");
-                    }
-
+            } else {
+                final Handler handler = new Handler();
+                handler.postDelayed(() -> closeCard(card1, imageView), 400);
+                if (turn.equals("counterPlayer1")) {
+                    turn = "counterPlayer2";
+                    Log.e("XXXXX", "counterPlayer2 turn:");
+                } else {
+                    turn = "counterPlayer1";
+                    Log.e("XXXXX", "counterPlayer1 turn:");
                 }
-                count=0;
-           }
 
-       }
+            }
+            count = 0;
+        }
+
+    }
 }
