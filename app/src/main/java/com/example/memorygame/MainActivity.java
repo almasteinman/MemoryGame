@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     // First array - Image views
     private void fillImageViewsArray() {
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < imageViewsArray.length; i++) {
             int imageViewId = getResources().getIdentifier("imageview_card" + (i + 1), "id", getPackageName());
             imageViewsArray[i] = findViewById(imageViewId);
         }
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Second array - Drawables (Images) identifiers
     private void fillDrawablesArray() {
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < drawablesArray.length; i++) {
             // Fill in the drawable's identifier
             int drawableId = getResources().getIdentifier("card" + ((i % 8) + 1), "drawable", getPackageName());
             drawablesArray[i] = drawableId;
@@ -61,16 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void openCard(View view) throws InterruptedException {
         ImageView imageView = (ImageView) view;
-
         int id_of_imageview_in_array = 0;
-
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < imageViewsArray.length; i++) {
             if (imageViewsArray[i] == imageView) {
                 id_of_imageview_in_array = i;
                 break;
             }
         }
-
         imageView.setImageResource(drawablesArray[id_of_imageview_in_array]);
         count++;
         turnEnd1(imageView);
@@ -81,6 +78,24 @@ public class MainActivity extends AppCompatActivity {
         card1Closed.setImageResource(R.drawable.blue_card);
         ImageView card2Closed = findViewById(view.getId());
         card2Closed.setImageResource(R.drawable.blue_card);
+    }
+
+    public void reset(View view){
+        for (int i = 0; i < imageViewsArray.length; i++) {
+            imageViewsArray[i].setImageResource(R.drawable.blue_card);
+        }
+        fillImageViewsArray();
+        fillDrawablesArray();
+        shuffleDrawablesArray();
+        counterPlayer1=0;
+        counterPlayer2=0;
+        String p1 = String.valueOf(counterPlayer1);
+        TextView tv1 = findViewById(R.id.textView1);
+        tv1.setText("P1= " + p1.toString());
+        String p2 = String.valueOf(counterPlayer2);
+        TextView tv2 = findViewById(R.id.textView2);
+        tv2.setText("P2= " + p2.toString());
+
     }
 
     public void turnEnd1(ImageView imageView) throws InterruptedException {
@@ -99,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     counterPlayer1++;
                     String p1 = String.valueOf(counterPlayer1);
                     TextView tv1 = findViewById(R.id.textView1);
-                    tv1.setText(p1.toString());
+                    tv1.setText("P1= " + p1.toString());
                     Log.e("XXXXX", "counterPlayer1 = " + counterPlayer1);
                     turn = "counterPlayer2";
                     Log.e("XXXXX", "counterPlayer2 turn:");
@@ -107,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                     counterPlayer2++;
                     String p2 = String.valueOf(counterPlayer2);
                     TextView tv2 = findViewById(R.id.textView2);
-                    tv2.setText(p2.toString());
+                    tv2.setText("P2= " + p2.toString());
                     Log.e("XXXXX", "counterPlayer2 = " + counterPlayer2);
                     turn = "counterPlayer1";
                     Log.e("XXXXX", "counterPlayer1 turn:");
@@ -122,10 +137,8 @@ public class MainActivity extends AppCompatActivity {
                     turn = "counterPlayer1";
                     Log.e("XXXXX", "counterPlayer1 turn:");
                 }
-
             }
             count = 0;
         }
-
     }
 }
