@@ -2,6 +2,7 @@ package com.example.memorygame;
 
 import android.os.Handler;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void closeCard(int card1, ImageView view) {
+        Log.e("XXXXX", "close card = ");
         ImageView card1Closed = findViewById(card1);
         card1Closed.setImageResource(R.drawable.blue_card);
         ImageView card2Closed = findViewById(view.getId());
@@ -129,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             } else {
                 final Handler handler = new Handler();
-                handler.postDelayed(() -> closeCard(card1, imageView), 400);
+                handler.postDelayed(() -> closeCard(card1, imageView), 500);
                 if (turn.equals("counterPlayer1")) {
                     turn = "counterPlayer2";
                     Log.e("XXXXX", "counterPlayer2 turn:");
