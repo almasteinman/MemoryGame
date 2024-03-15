@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MemoryGame</string>
     <string name="memory_game">Memory Game</string>
+    <string name="client_id">594179785204-cta4486s1u9f69vpsjh5tj8v3prp8akm.apps.googleusercontent.com</string>
 </resources>
