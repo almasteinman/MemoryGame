@@ -21,7 +21,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
@@ -31,7 +33,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
     FirebaseAuth auth;
     GoogleSignInClient googleSignInClient;
     ShapeableImageView imageView;
@@ -49,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 auth = FirebaseAuth.getInstance();
-                                Glide.with(MainActivity.this).load(Objects.requireNonNull(auth.getCurrentUser()).getPhotoUrl()).into(imageView);
+                                Glide.with(LogInActivity.this).load(Objects.requireNonNull(auth.getCurrentUser()).getPhotoUrl()).into(imageView);
                                 name.setText(auth.getCurrentUser().getDisplayName());
                                 mail.setText(auth.getCurrentUser().getEmail());
-                                Toast.makeText(MainActivity.this, "Signed in successfully!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LogInActivity.this, "Signed in successfully!", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(MainActivity.this, "Failed to sign in: " + task.getException(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LogInActivity.this, "Failed to sign in: " + task.getException(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_log_in);
 
         FirebaseApp.initializeApp(this);
         imageView = findViewById(R.id.profileImage);
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 .requestIdToken(getString(R.string.client_id))
                 .requestEmail()
                 .build();
-        googleSignInClient = GoogleSignIn.getClient(MainActivity.this, options);
+        googleSignInClient = GoogleSignIn.getClient(LogInActivity.this, options);
 
         auth = FirebaseAuth.getInstance();
 
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        MaterialButton signOut = findViewById(R.id.signout);
+        MaterialButton signOut = findViewById(R.id.signOut);
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
                             googleSignInClient.signOut().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
-                                    Toast.makeText(MainActivity.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(MainActivity.this, MainActivity.class));
+                                    Toast.makeText(LogInActivity.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(LogInActivity.this, LogInActivity.class));
                                 }
                             });
                         }
@@ -114,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if (auth.getCurrentUser() != null) {
-            Glide.with(MainActivity.this).load(Objects.requireNonNull(auth.getCurrentUser()).getPhotoUrl()).into(imageView);
+            Glide.with(LogInActivity.this).load(Objects.requireNonNull(auth.getCurrentUser()).getPhotoUrl()).into(imageView);
             name.setText(auth.getCurrentUser().getDisplayName());
             mail.setText(auth.getCurrentUser().getEmail());
         }
